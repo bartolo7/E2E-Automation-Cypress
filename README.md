@@ -84,27 +84,37 @@ describe("Login Parabank", () => {
 
 In the first test the url is passed as string while in the second the url is fetch fron the value baseUrl in the cypress.json
 
-To run the test write in the terminal: npm run cypress:open
+To run the test write in the terminal:
+
+```
+npm run cypress:open
+```
 
 ![Alt text](picture/CypressTestRunner.png?raw=true "Title")
 
-### Installing
+Double-click the login.spec.js and run the test:
 
-A step by step series of examples that tell you how to get a development env running
+![Alt text](picture/Cypress_cyvisit.png?raw=true "Title")
 
-Say what the step will be
+### Cypress write first test using cy.get()
+
+The next test will be to login with username and password. You can use the target icon beside the url in the picture above to fetch the username textbox attribute. 
+
+That´s the result for user name: cy.get(':nth-child(2) > .input')
+
+The test looks like this: 
 
 ```
-Give the example
+it("Login with username and password", () => {
+    cy.get(':nth-child(2) > .input').type('pedroR')
+    cy.get(':nth-child(4) > .input').type('87654321')
+    cy.get(':nth-child(5) > .button').click()
+  })
 ```
 
-And repeat
+![Alt text](picture/Cypress_cyget.png?raw=true "Title")
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+### Cypress write first test using cy.request()
 
 ## Running the tests
 
