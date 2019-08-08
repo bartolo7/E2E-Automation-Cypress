@@ -124,31 +124,32 @@ In the ci folder you wil find the Dockerfile to build the docker image.
 
 ```
 FROM cypress/included:3.2.0
-MAINTAINER David Bartolome 
+MAINTAINER David Bartolome
 ADD ./ E2E-Automation-Cypress
 WORKDIR E2E-Automation-Cypress
 RUN npm i
 CMD ["npm","run","cypress:run"]
 
 ```
-Run the commands below in your terminal to build the image and to run the container:
+
+Run the commands below in your terminal to build the image.
 
 ```
 docker build --rm -t cypress:1 -f ci/Dockerfile .
-
-docker run -it cypress:1 
-
 ```
 
-This is the result: 
+If the terminal shows "Successfully tagged cypress:1", then you are ready to run the container with this command:
 
 ```
-
+docker run -it cypress:1
 ```
 
+This is the result after running the container:
 
+```
+![Alt text](picture/Cypress_Dockerfile.png?raw=true "Title")
 
-
+```
 
 ### Break down into end to end tests
 
