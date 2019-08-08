@@ -2,7 +2,7 @@
 
 Step by step guide to start E2E automation with Cypress.
 
-I use the web side parabank.parasoft.com, which it is bank demo web for automation.
+The web parabank.parasoft.com, which is a bank demo, is used in this tutorial.
 
 ## Getting Started
 
@@ -25,9 +25,10 @@ Add these two scripts to package.json:
     "cypress:run": "cypress run"
   }
 ```
-Cypress:open will run the Test Run while cypress:run runs in the terminal. 
 
-## Configure Cypress to have access to all Cypress libraries 
+Cypress:open will run the Test Run while cypress:run runs in the terminal.
+
+## Configure Cypress to have access to all Cypress libraries
 
 Add a file tsconfig.json in the root of the directory and copy the next config:
 
@@ -41,11 +42,12 @@ Add a file tsconfig.json in the root of the directory and copy the next config:
   "include": ["**/*.*"]
 }
 ```
+
 For instance, now if you type "cy.", you will have access to all the methods from the Cypress framework while writing you test. It is really handy!
 
 ### Cypress write first test using cy.visit()
 
-Add the baseUrl value to the cypress.json configuration file. 
+Add the baseUrl value to the cypress.json configuration file.
 
 ```
 {
@@ -54,17 +56,18 @@ Add the baseUrl value to the cypress.json configuration file.
 ```
 
 Cypress folder will have the next folders:
+
 ```
 fixtures
 integration
 plugins
-support 
+support
 
 ```
 
 Create a new folder called Login within integration and add a new test script so-called login.spec.js
 
-Write the first two test to see the website Parabank. 
+Write the first two test to see the website Parabank.
 
 ```
 describe("Login Parabank", () => {
@@ -78,12 +81,12 @@ describe("Login Parabank", () => {
 });
 
 ```
+
 In the first test the url is passed as string while in the second the url is fetch fron the value baseUrl in the cypress.json
 
-To run the test write in the terminal: npm run cypress:open 
+To run the test write in the terminal: npm run cypress:open
 
-![Alt text](picture/Cypress Test Runner.png
-?raw=true "Title")
+![Alt text](picture/Cypress Test Runner.png?raw=true "Title")
 
 ### Installing
 
