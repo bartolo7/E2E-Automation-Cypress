@@ -45,6 +45,8 @@ Add a file tsconfig.json in the root of the directory and copy the next config:
 
 For instance, now if you type "cy.", you will have access to all the methods from the Cypress framework while writing you test. It is really handy!
 
+### Start writing E2E Automation
+
 ### Cypress write first test using cy.visit()
 
 Add the baseUrl value to the cypress.json configuration file.
@@ -98,11 +100,11 @@ Double-click the login.spec.js and run the test:
 
 ### Cypress write first test using cy.get()
 
-The next test will be to login with username and password. You can use the target icon beside the url in the picture above to fetch the username textbox attribute. 
+The next test will be to login with username and password. You can use the target icon beside the url in the picture above to fetch the username textbox attribute.
 
 That´s the result for user name: cy.get(':nth-child(2) > .input')
 
-The test looks like this: 
+The test looks like this:
 
 ```
 it("Login with username and password", () => {
@@ -146,26 +148,14 @@ Add additional notes about how to deploy this on a live system
 - [Maven](https://maven.apache.org/) - Dependency Management
 - [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
-- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+- **David Bartolome** - _Quality Assurance Developer_ -
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc

@@ -1,0 +1,9 @@
+version: "3"
+services:
+  e2e_automation:
+    build:
+      context: .
+      dockerfile: ./ci/Dockerfile
+    image: cypress:2
+    container_name: e2eCypress
+    restart: always
