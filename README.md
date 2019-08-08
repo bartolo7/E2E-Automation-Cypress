@@ -118,9 +118,37 @@ it("Login with username and password", () => {
 
 ### Cypress write first test using cy.request()
 
-## Running the tests
+## Run Cypress with Docker
 
-Explain how to run the automated tests for this system
+In the ci folder you wil find the Dockerfile to build the docker image.
+
+```
+FROM cypress/included:3.2.0
+MAINTAINER David Bartolome 
+ADD ./ E2E-Automation-Cypress
+WORKDIR E2E-Automation-Cypress
+RUN npm i
+CMD ["npm","run","cypress:run"]
+
+```
+Run the commands below in your terminal to build the image and to run the container:
+
+```
+docker build --rm -t cypress:1 -f ci/Dockerfile .
+
+docker run -it cypress:1 
+
+```
+
+This is the result: 
+
+```
+
+```
+
+
+
+
 
 ### Break down into end to end tests
 
