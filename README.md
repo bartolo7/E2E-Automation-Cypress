@@ -86,7 +86,7 @@ In the first test the url is passed as string while in the second the url is fet
 
 To run the test write in the terminal: npm run cypress:open
 
-![Alt text](picture/Cypress Test Runner.png?raw=true "Title")
+![Alt text](picture/CypressTestRunner.png?raw=true "Title")
 
 ### Installing
 
