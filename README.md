@@ -146,10 +146,7 @@ docker run -it cypress:1
 
 This is the result after running the container:
 
-```
 ![Alt text](picture/Cypress_Dockerfile.png?raw=true "Title")
-
-```
 
 ### Break down into end to end tests
 
