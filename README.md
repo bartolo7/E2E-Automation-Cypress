@@ -120,7 +120,62 @@ it("Login with username and password", () => {
 
 ![Alt text](picture/Cypress_cyget.png?raw=true "Title")
 
-### Cypress write first test using cy.request()
+### Cypress write first test using cy.request(), cy.fixture() and Alias
+
+The request method plays an important role in order to control the state of the web and avoid overusing the UI elemetns. For instance, if the test login with username and password was positive, for the next scenarios you can bypass the UI and control the state of your web by using request instead. 
+
+Fixture is json data file under the fixtures folder. It can be access with cy.fixture() as in the example below in the beforeEach(). 
+
+Note: this test context object will not work if you use arrow functions. 
+
+```
+describe("Petstore request", () => {
+  const BASE_URL = "https://petstore.swagger.io/v2";
+
+  beforeEach(function() {
+    cy.fixture("createUserBody").then(json => {
+      this.user = json;
+    });
+  });
+```
+In this test, I just cy.log() the fixture that was fetch in the beforeEach(). 
+
+```
+  it("Print values form fixture", function() {
+    cy.log(this.user);
+    cy.log(this.user.username);
+    cy.log(this.user.password);
+  });
+```
+
+If your critical path to create a new user through the web works for the next scenario use cy.request(). In the example below, I am not accessing the this.user object but fetching the fixture once again. I know it is overkilling! Then, I assert the response code. 
+
+```
+  it("Create user with request and fixture", function() {
+    cy.fixture("createUserBody").then(json => {
+      cy.request("POST", `${BASE_URL}/user`, json).then(resp => {
+        expect(resp.status).to.eq(200);
+      });
+    });
+  });
+```
+
+In this test, I use the cy.request() again but I create an Alias .as("resp") which can be manipulated later on for assertions or something else. 
+
+```
+  it("Login with username and passwork ", function() {
+    const option = {
+      method: "GET",
+      url: `${BASE_URL}/user/login`,
+      qs: `login?username=${this.user.username}&password=${this.user.password}`
+    };
+    cy.request(option).as("resp");
+    cy.get("@resp").should(response => {
+      expect(response).to.have.property("headers");
+    });
+  });
+});
+```
 
 ## Run Cypress with Docker
 
