@@ -8,13 +8,17 @@ describe("Login Parabank", () => {
   });
 
   it("Login with username and password", () => {
-    cy.get(':nth-child(2) > .input').type('pedroR')
-    cy.get(':nth-child(4) > .input').type('87654321')
+    const username = 'pedroR'
+    const password = '12'
+    cy.get(':nth-child(2) > .input').type(username)
+    cy.get(':nth-child(4) > .input').type(password)
     cy.get(':nth-child(5) > .button').click()
   })
 
-  
+  it("Login with username and password REST", ()=> {
+    cy.request("http://parabank.parasoft.com:443/parabank/services/ParaBank")
+  })
 
- 
+  it()
 
 });
