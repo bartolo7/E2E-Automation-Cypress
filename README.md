@@ -2,9 +2,13 @@
 
 Step by step guide to start E2E automation with Cypress.
 
-The web parabank.parasoft.com, which is a bank demo, is used in this tutorial.
+Create a user in parabank.parasoft.com, which is a bank demo website.
 
 ## Getting Started
+
+Create a user in parabank.parasoft.com, which is a bank demo website.
+
+For the request test examples, I will use this server documented in swagger: https://petstore.swagger.io/#/
 
 Create a project and run the next commands:
 
