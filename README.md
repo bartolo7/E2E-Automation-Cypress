@@ -124,7 +124,7 @@ it("Login with username and password", () => {
 
 The request method plays an important role in order to control the state of the web and avoid overusing the UI elemetns. For instance, if the test login with username and password was positive, for the next scenarios you can bypass the UI and control the state of your web by using request instead. 
 
-Fixture is json data file under the fixtures folder. It can be access with cy.fixture() as in the example below in the beforeEach(). 
+Fixture is a json data file under the fixtures folder. It can be access with cy.fixture() as in the example below in the beforeEach(). 
 
 Note: this test context object will not work if you use arrow functions. 
 
